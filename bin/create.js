@@ -26,7 +26,7 @@ const answers = await inquirer.prompt([
 ]);
 
 const dst = answers.projectName.trim();
-console.log(`Creating project @${dst}...`);
+console.log(`Creating project ${c.green(dst)}...\n`);
 const emitter = degit(repo, { cache: false, force: true, verbose: true });
 await emitter.clone(dst);
 
@@ -36,9 +36,10 @@ if (fs.existsSync(packageLockPath)) {
   fs.rmSync(packageLockPath, { force: true });
 }
 
-console.log(c.green(` cd ${dst} \n`));
-console.log(c.green(` npm install\n`));
-console.log(c.green(` npm run dev\n`));
+console.log(c.green(`\n`));
+console.log(c.green(`  cd ${dst} \n`));
+console.log(c.green(`  npm install\n`));
+console.log(c.green(`  npm run start\n`));
 
 
 // inquirer.js introduction, https://juejin.cn/post/7358302760151187468
