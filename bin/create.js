@@ -3,6 +3,7 @@ import c from 'ansi-colors';
 import inquirer from 'inquirer';
 import degit from 'degit';
 import fs from 'node:fs';
+import path from 'node:path';
 
 const repo = 'myku0814/scaffold-config-myku';
 
@@ -28,6 +29,12 @@ const dst = answers.projectName.trim();
 console.log(`Creating project @${dst}...`);
 const emitter = degit(repo, { cache: false, force: true, verbose: true });
 await emitter.clone(dst);
+
+// remove package-lock.json
+const packageLockPath = path.join(dst, 'package-lock.json');
+if (fs.existsSync(packageLockPath)) {
+  fs.rmSync(packageLockPath, { force: true });
+}
 
 console.log(c.green(` cd ${dst} \n`));
 console.log(c.green(` npm install\n`));
