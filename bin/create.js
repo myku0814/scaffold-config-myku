@@ -1,6 +1,9 @@
 #!/usr/bin/env node
+import c from 'ansi-colors';
 import inquirer from 'inquirer';
 import degit from 'degit';
+import fs from 'node:fs';
+
 const repo = 'myku0814/scaffold-config-myku';
 
 const answers = await inquirer.prompt([
@@ -26,9 +29,9 @@ console.log(`Creating project @${dst}...`);
 const emitter = degit(repo, { cache: false, force: true, verbose: true });
 await emitter.clone(dst);
 
-console.log(` cd ${dst} \n`);
-console.log(` npm install\n`);
-console.log(` npm run dev\n`);
+console.log(c.green(` cd ${dst} \n`));
+console.log(c.green(` npm install\n`));
+console.log(c.green(` npm run dev\n`));
 
 
 // inquirer.js introduction, https://juejin.cn/post/7358302760151187468

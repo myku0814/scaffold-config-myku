@@ -21,5 +21,5 @@ app.listen(port, () => {
   console.log(`server is running on [localhost:${port}]`);
 });
 /************************************************************************************************/
-import mykuuu from './router/mykuuu.js'
+import mykuuu from './router/mykuuu.js';
 console.log(`mykuuu.myku: ${mykuuu.myku}`);
