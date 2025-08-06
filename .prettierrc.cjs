@@ -1,0 +1,1 @@
+module.exports = require('@myku0814/public-config-myku/prettier/node');
