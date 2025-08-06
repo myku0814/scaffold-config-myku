@@ -17,6 +17,9 @@
     "node": ">=20"
   },
   "main": "./src/index.js",
+  "bin": {
+    "create-scaffold-config-myku": "./bin/create.js"
+  },
   "scripts": {
     "start": "npm run server:dev",
     "play": "cross-env NODE_ENV=\"development\" nodemon --watch \"src/**\" --ext \"ts,json\" --ignore \"src/**/*.spec.ts\" --exec \"node --import tsx ./src/dev/index.ts\"",
@@ -38,7 +41,9 @@
     "ansi-colors": "^4.1.3",
     "busboy": "^1.6.0",
     "cors": "^2.8.5",
+    "degit": "^2.8.4",
     "express": "^4.19.2",
+    "inquirer": "^12.9.0",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.2.2"
   },
@@ -49,11 +54,11 @@
     "@types/jsonwebtoken": "^9.0.6",
     "@types/node": "^20.12.5",
     "cross-env": "^7.0.3",
+    "eslint": "^8.57.0",
     "nodemon": "^3.1.0",
     "npm-run-all2": "^6.1.2",
-    "tsx": "^4.7.1",
-    "eslint": "^8.57.0",
     "prettier": "^3.2.5",
+    "tsx": "^4.7.1",
     "typescript": "~5.4.0"
   }
 }

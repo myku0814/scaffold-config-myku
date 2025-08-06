@@ -21,6 +21,5 @@ app.listen(port, () => {
   console.log(`server is running on [localhost:${port}]`);
 });
 /************************************************************************************************/
-app.get('/', (_req, res) => {
-  res.send('Scaffold Express Server develop by myku');
-});
+import mykuuu from './router/mykuuu.js'
+console.log(`mykuuu.myku: ${mykuuu.myku}`);
