@@ -16,10 +16,11 @@ app.use(express.static(pathToPublicDir));
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
 /************************************************************************************************/
+import api from './router/api.js';
+app.use('/api', api);
+/************************************************************************************************/
 const port: number = 3000;
 app.listen(port, () => {
   console.log(`server is running on [localhost:${port}]`);
 });
 /************************************************************************************************/
-import mykuuu from './router/mykuuu.js';
-console.log(`mykuuu.myku: ${mykuuu.myku}`);
