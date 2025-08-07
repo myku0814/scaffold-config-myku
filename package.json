@@ -1,6 +1,6 @@
 {
   "name": "@myku0814/scaffold-config-myku",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "private": false,
   "type": "module",
   "description": "Scaffold Express Server develop by myku",
